@@ -5,6 +5,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
+import static co.com.choucair.certification.prueba.userinterface.SearchCoursePage.*;
+
 public class Answer implements Question<Boolean> {
     private String question;
 
@@ -18,7 +20,7 @@ public class Answer implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean result;
-        String nameCourse = Text.of(SearchCoursePage.NAME_COURSE).viewedBy(actor).asString();
+        String nameCourse = Text.of(NAME_COURSE).viewedBy(actor).asString();
         if (question.equals(nameCourse)){
             result = true;
         }else{
